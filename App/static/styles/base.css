@@ -3,19 +3,23 @@
 }
 .navbar-brand>img {
   height: 100%;
-  padding: 15px;
+  padding: 0px;
   width: auto;
 }
 
 .navbar {
-  background-color: #a0d0f3;
-  font-family: 'Montserrat' !important;
+  background-color: #6166E1;
 }
 
-.nav.navbar-nav li a {
-  color: #353534;
+body nav .navbar-nav a:hover {
+  color: #4AB9D3 !important;
 }
 
-.nav.navbar-nav li a:hover {
-  color: white;
+body nav .navbar-nav a {
+  color: #ffffff !important;
+  font-size: 200%;
+}
+
+#dropdown1 {
+  background-color: #6166E1;
 }

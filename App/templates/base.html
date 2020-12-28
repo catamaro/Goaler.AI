@@ -4,48 +4,60 @@
 Goaler.AI
 {% endblock %}
 
+
 {% block navbar %}
 
 <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/base.css') }}">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="{{ url_for('static',filename='styles/styles.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ url_for('static',filename='styles/custom-responsive-styles.css') }}" rel="stylesheet" type="text/css">
 
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#"><img src="/static/logo.png" alt="Logo">
-            </a>
-        </div>
-        <div id="navbar1" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="{{ url_for('index') }}">Home</a></li>
-                <li><a href="#">Athletes</a></li>
-                <li><a href="#">Calendar</a></li>
-                <li><a href="#">Planning</a></li>
-                <li><a href="#">Statistics</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                        aria-expanded="false">Settings<span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
-                </li>
+<nav class="navbar navbar-expand-md navbar-light">
+    <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand mr-auto" href="#"><img src="static/images/logo.png" alt="FoxPro" /></a>
+
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> <span
+                class="navbar-toggler-icon"></span> </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            {% if current_user.is_anonymous %}
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"> <a class="nav-link" href="{{ url_for('test') }}">Home</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="#About">About</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="#Services">Services</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="#Testimonials">Testimonials</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="#Contact">Contact</a> </li>
             </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item"> <a class="nav-link" href="{{ url_for('login') }}">Login</a></li>
+            </ul>
+            {% else %}
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Calendar</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Plans</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Statistics</a></li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="dropdown nav-item">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button"
+                        aria-expanded="false">Profile</a>
+                    <ul id = "dropdown1" class="dropdown-menu" role="menu">
+                        <li><a href="{{ url_for('athletes') }}">Your Athletes</a></li>
+                        <li><a href="#">Your Preferences</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Settings</a></li>                        
+                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    </ul>
+                </li>              
+            </ul>
+            {% endif %}
         </div>
-        <!--/.nav-collapse -->
     </div>
-    <!--/.container-fluid -->
 </nav>
 
 {% endblock %}
