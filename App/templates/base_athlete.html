@@ -4,8 +4,15 @@
 Goaler.AI
 {% endblock %}
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
 {% block styles %}
 {{super()}}
+<link rel="icon" type="image/png" href="static/images/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="static/images/favicon-16x16.png" sizes="16x16" />
 <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/base.css') }}">
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900" rel="stylesheet">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -14,14 +21,12 @@ Goaler.AI
 
 {% endblock %}
 
-
 {% block navbar %}
-
 
 <nav class="navbar navbar-expand-md navbar-light">
     <div class="container">
         <!-- Brand -->
-        <a class="navbar-brand mr-auto" href="{{ url_for('index') }}"><img src="static/images/logo.png" alt="Goaler.AI" /></a>
+        <a class="navbar-brand mr-auto" href="{{ url_for('home') }}"><img src="static/images/logo.png" alt="Goaler.AI" /></a>
 
         <!-- Toggler/collapsibe Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> <span
@@ -29,31 +34,16 @@ Goaler.AI
 
         <!-- Navbar links -->
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            {% if current_user.is_anonymous %}
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"> <a class="nav-link" href="{{ url_for('index') }}">Home</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="#About">About</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="#Services">Services</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="#Portfolio">Sports</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="#Team">Team</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="#Contact">Contact</a> </li>
-            </ul>
-            <ul class="navbar-nav">
-                <li class="nav-item"> <a class="nav-link" href="{{ url_for('login') }}">Login</a></li>
-            </ul>
-            {% else %}
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Dashboard</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Calendar</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Plans</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Statistics</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('athlete') }}">Goals tracker</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Calender</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Performance</a></li>
             </ul>
             <ul class="navbar-nav">
                 <li class="dropdown nav-item">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button"
                         aria-expanded="false">Profile</a>
                     <ul id = "dropdown_profile" class="dropdown-menu dropdown-menu-right" role="menu">
-                        <li><a href="{{ url_for('athletes') }}">Your Athletes</a></li>
                         <li><a href="#">Your Preferences</a></li>
                         <li class="divider"></li>
                         <li><a href="#">Settings</a></li>                        
@@ -61,7 +51,6 @@ Goaler.AI
                     </ul>
                 </li>              
             </ul>
-            {% endif %}
         </div>
     </div>
 </nav>

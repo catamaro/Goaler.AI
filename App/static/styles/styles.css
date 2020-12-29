@@ -4587,7 +4587,8 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
   padding: .75rem 1.25rem;
   margin-bottom: 1rem;
   border: 1px solid transparent;
-  border-radius: .25rem
+  border-radius: .25rem;
+  font-size: 1.5rem;
 }
 
 .alert-heading {
@@ -9561,7 +9562,7 @@ span {
 #Banner {
   position: relative;
   height: 100vh;
-  background: linear-gradient(274deg, #46c8d0, #6262e2 130%, #c962f7);
+  background: linear-gradient(320deg, #c962f7, #6262e2 0%, #46c8d0);
   color: #fff;
 }
 
