@@ -24,8 +24,8 @@
       $jq(".menu-toggle").removeClass("active");
       $jq(".menu-toggle > .fa-bars, .menu-toggle > .fa-times").toggleClass("fa-bars fa-times");
     });
-    //  TESTIMONIALS CAROUSEL HOOK
-    var owl = $jq('#customers-testimonials');
+    //  Team CAROUSEL HOOK
+    var owl = $jq('#customers-Team');
     owl.owlCarousel({
       loop: true,
       center: true,

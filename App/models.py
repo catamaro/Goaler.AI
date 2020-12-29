@@ -1,5 +1,5 @@
 from App import app, login
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
+from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Float
 from sqlalchemy.orm import with_polymorphic, relationship, backref, foreign
 from App.database import Base
 
@@ -24,6 +24,8 @@ class User(UserMixin, Base):
     username = Column(String(64), index=True, unique=True)
     email = Column(String(120), index=True, unique=True)
     password_hash = Column(String(128))
+    first_name = Column(String(64))
+    last_name = Column(String(64))
     
     def __repr__(self):
         return '<User: {} -> Email: {}>'.format(self.username, self.email)
@@ -56,3 +58,9 @@ class Athlete(User):
                         'inherit_condition': (id == User.id)}
 
     coach_id=Column(Integer, ForeignKey('coach.coach_id'))
+    height=Column(Float)
+    weight=Column(Float)
+    birthday=Column(DateTime)
+
+    def __repr__(self):
+        return("{}({!r} {!r} {!r})".format(self.__class__.__name__, self.username, self.email, self.height, self.weight, self.birthday ))

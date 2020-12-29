@@ -1,5 +1,5 @@
 .navbar-brand {
-  padding: 0px;
+  padding: auto;
 }
 .navbar-brand>img {
   height: 100%;
@@ -8,7 +8,8 @@
 }
 .navbar {
   background-color: #6166E1;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
+  border-radius: 0px
 }
 
 .navbar-nav a:hover {
@@ -26,10 +27,6 @@
 
 #banner {
   max-width: 100%;
-}
-
-p {
-  font-size: 15px;
 }
 
 #submit {
@@ -56,5 +53,9 @@ p {
   right: 3vh;
   color: #ffffff;
   background-color: #6166E1;
-  z-index: 8;
+  z-index: 2;
 }  
+
+.container-2 {
+  padding: 25px;
+}

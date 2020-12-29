@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, SelectField, IntegerField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, SelectField, IntegerField, DateField, FloatField
 from wtforms.validators import DataRequired, Email, EqualTo, ValidationError, Length
 from App.models import User
 from App import app
@@ -39,3 +39,13 @@ class RegistrationForm(FlaskForm):
             User.email == email.data).first()
         if user is not None:
             raise ValidationError('Please use a different username.')
+
+
+class InformationForm(FlaskForm):
+    first_name = StringField('First Name')
+    last_name = StringField('Last Name')
+    birthday = DateField('Birthday Date (yyyy-MM-DD)')
+    height = FloatField('Height')
+    weight = FloatField('Weight')
+    submit = SubmitField('Save')
+
