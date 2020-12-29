@@ -51,7 +51,7 @@
   }
 }
 /*Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) and (max-width: 767px) {
+@media (min-width: 576px) and (max-width: 765px) {
   .logo i {
     font-size: 40px;
   }
@@ -103,7 +103,7 @@
   }
 }
 /*Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 766px) and (max-width: 977px) {
   .content-section {
     padding-top: 70px;
     padding-bottom: 70px;
@@ -136,25 +136,25 @@
   }
 }
 /*Large devices (desktops, 992px and up)*/
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 978px) and (max-width: 1184px) {
   .content-section {
     padding-top: 70px;
     padding-bottom: 70px;
   }
   #Banner .content-wrap h1 {
-    font-size: 40px;
+    font-size: 44px;
   }
   #Banner .content-wrap h3 {
-    font-size: 24px;
+    font-size: 28px;
   }
   .btn-xl {
     padding: 20px 30px;
   }
   .content-section-heading h2 {
-    font-size: 30px;
+    font-size: 34px;
   }
   #Contact .contact-wrapper span {
-    font-size: 16px;
+    font-size: 20px;
   }
   footer.footer .social-link {
     height: 50px;
@@ -169,4 +169,4 @@
   }
 }
 /*Extra large devices (large desktops, 1200px and up)*/
-@media (min-width: 1200px) {}
+@media (min-width: 1185px){}

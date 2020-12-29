@@ -1,8 +1,354 @@
 {% extends "base.html" %}
-{% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
 
-    <h2>This will be the landing page!</h2>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" type="image/png" href="static/images/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="static/images/favicon-16x16.png" sizes="16x16" />
+  <!--scripts-->
+  <script type="text/javascript" src="static/js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="static/js/all-plugins.js"></script>
+  <script type="text/javascript" src="static/js/plugins-activate.js"></script>
 
+</head>
+
+<body id="page-top">
+  <a id="button_gotop" class="btn btn-primary btn-xl smooth-scroll" href="#page-top"><i class="fa fa-arrow-up"></i></a>
+  <!-- Header Starts -->
+  <section id="Banner" class="content-section">
+    <div class="container content-wrap text-center">
+      <h1>Next Level Sports</h1>
+      <h3>
+        <em>A service that will help athletes around the world to achive their goals</em>
+      </h3>
+      <a class="btn btn-primary btn-xl smooth-scroll" href="#About">Find Out More</a>        
+    </div>
+    <div class="overlay"></div>
+  </section>
+  <!-- Header Ends -->
+  <!-- About Us Starts -->
+  <section id="About" class="content-section">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="block-heading">
+            <h2>Mission</h2>
+          </div>
+          <p class="lead">Help athletes around the world achieve their goals!
+          </p>
+        </div>
+        <div class="col-md-6">
+          <div class="block-heading">
+            <h2>Vision</h2>
+          </div>
+          <p class="lead">Use AI and Sport Expertise to create a service 
+            that gives athletes  step-by-step guideline to achieve their goals.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About Us Starts -->
+  <section id="Services" class="content-section text-center">
+    <div class="container">
+      <div class="block-heading">
+        <h2>What We Offer</h2>
+        <p>A set of tools and sevices that will help you achive your goals</p>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="service-box">
+            <div class="service-icon yellow">
+              <div class="front-content">
+                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                <h3>Goals Tracker</h3>
+              </div>
+            </div>
+            <div class="service-content">
+              <h3>Goals Tracker</h3>
+              <p>It will allow you to track and update your goals</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="service-box">
+            <div class="service-icon orange">
+              <div class="front-content">
+                <i class="fa fa-list" aria-hidden="true"></i>
+                <h3>Training Plans</h3>
+              </div>
+            </div>
+            <div class="service-content">
+              <h3>Training Plans</h3>
+              <p>A list of training plans, created by the AI and reviewed by the advisor</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="service-box ">
+            <div class="service-icon red">
+              <div class="front-content">
+                <i class="fa fa-line-chart" aria-hidden="true"></i>
+                <h3>Team Statistics</h3>
+              </div>
+            </div>
+            <div class="service-content">
+              <h3>Team Statistics</h3>
+              <p>Gives the coach an overview of the team performance to track their evolution 
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="service-box">
+            <div class="service-icon grey">
+              <div class="front-content">
+                <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                <h3>Data Input</h3>
+              </div>
+            </div>
+            <div class="service-content">
+              <h3>Data Input</h3>
+              <p>Wearables, Camera and manual input to achieve the biggest amount of data
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="content-section text-center" id="Portfolio">
+    <div class="container">
+      <div class="block-heading">
+        <h2>Portfolio</h2>
+        <p>Collection of random photos that I do not know what to do.</p>
+      </div>
+      <div class="portfolio-wrapper clearfix">
+        <a class="each-portfolio" data-fancybox="gallery" href="static/images/p-two.jpeg">
+          <div class="content hover-cont-wrap">
+            <div class="content-overlay"></div>
+            <img class="content-image" src="static/images/p-two.jpeg">
+            <div class="content-details fadeIn-bottom">
+              <h5 class="p-title">Title</h5>
+              <p class="p-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              <span class="zoom"><i class="fa fa-search-plus"></i></span>
+            </div>
+          </div>
+        </a>
+        <a class="each-portfolio" data-fancybox="gallery" href="static/images/p-three.jpeg">
+          <div class="content hover-cont-wrap">
+            <div class="content-overlay"></div>
+            <img class="content-image" src="static/images/p-three.jpeg">
+            <div class="content-details fadeIn-bottom">
+              <h5 class="p-title">Title</h5>
+              <p class="p-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              <span class="zoom"><i class="fa fa-search-plus"></i></span>
+            </div>
+          </div>
+        </a>
+        <a class="each-portfolio" data-fancybox="gallery" href="static/images/p-four.jpeg">
+          <div class="content hover-cont-wrap">
+            <div class="content-overlay"></div>
+            <img class="content-image" src="static/images/p-four.jpeg">
+            <div class="content-details fadeIn-bottom">
+              <h5 class="p-title">Title</h5>
+              <p class="p-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              <span class="zoom"><i class="fa fa-search-plus"></i></span>
+            </div>
+          </div>
+        </a>
+        <a class="each-portfolio" data-fancybox="gallery" href="static/images/p-five.jpeg">
+          <div class="content hover-cont-wrap">
+            <div class="content-overlay"></div>
+            <img class="content-image" src="static/images/p-five.jpeg">
+            <div class="content-details fadeIn-bottom">
+              <h5 class="p-title">Title</h5>
+              <p class="p-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              <span class="zoom"><i class="fa fa-search-plus"></i></span>
+            </div>
+          </div>
+        </a>
+        <a class="each-portfolio" data-fancybox="gallery" href="static/images/p-six.jpeg">
+          <div class="content hover-cont-wrap">
+            <div class="content-overlay"></div>
+            <img class="content-image" src="static/images/p-six.jpeg">
+            <div class="content-details fadeIn-bottom">
+              <h5 class="p-title">Title</h5>
+              <p class="p-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              <span class="zoom"><i class="fa fa-search-plus"></i></span>
+            </div>
+          </div>
+        </a>
+        <a class="each-portfolio" data-fancybox="gallery" href="static/images/p-three.jpeg">
+          <div class="content hover-cont-wrap">
+            <div class="content-overlay"></div>
+            <img class="content-image" src="static/images/p-three.jpeg">
+            <div class="content-details fadeIn-bottom">
+              <h5 class="p-title">Title</h5>
+              <p class="p-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              <span class="zoom"><i class="fa fa-search-plus"></i></span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- TESTIMONIALS -->
+  <section id="Testimonials" class="content-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="block-heading">
+            <h2>Testimonials</h2>
+            <p>Read some reviews from our awesome team!</p>
+          </div>
+          <div id="customers-testimonials" class="owl-carousel">
+            <div class="item">
+              <div class="shadow-effect">
+                <img class="img-circle" src="static/images/catarina.jpg" alt="">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                  industry's standard dummy text ever since the 1500s</p>
+              </div>
+              <div class="testimonial-name">Catarina Amaro</div>
+            </div>
+            <div class="item">
+              <div class="shadow-effect">
+                <img class="img-circle" src="static/images/barbara.png" alt="">
+                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+                  classical Latin literature from 45 BC, making it over 2000 years old</p>
+              </div>
+              <div class="testimonial-name">Bárbara Silva</div>
+            </div>
+            <div class="item">
+              <div class="shadow-effect">
+                <img class="img-circle" src="static/images/proenca.png" alt="">
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                  alteration in some form, by injected humour, or randomised words which don't look even slightly
+                  believable. </p>
+              </div>
+              <div class="testimonial-name">Francisco Proença</div>
+            </div>
+            <div class="item">
+              <div class="shadow-effect">
+                <img class="img-circle" src="static/images/santos.png" alt="">
+                <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model
+                  text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
+              </div>
+              <div class="testimonial-name">Francisco Santos</div>
+            </div>
+            <div class="item">
+              <div class="shadow-effect">
+                <img class="img-circle" src="static/images/miguel.png" alt="">
+                <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model
+                  text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
+              </div>
+              <div class="testimonial-name">Miguel Monteiro</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END OF TESTIMONIALS -->
+  <section id="Contact" class="content-section">
+    <div class="container">
+      <div class="block-heading">
+        <h2>Contact Us</h2>
+        <p>If you need any assistance or information leaves us a message below</p>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-6">
+          <div class="contact-wrapper">
+            <div class="address-block border-bottom">
+              <h3 class="add-title">Headquaters</h3>
+              <div class="c-detail">
+                <span class="c-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span><span
+                  class="c-info">&nbsp;Avenida Rovisco Pais nº1, 1049-001</span>
+              </div>
+              <div class="c-detail">
+                <span class="c-icon"><i class="fa fa-phone" aria-hidden="true"></i></span><span class="c-info">+351 913 908
+                  488</span>
+              </div>
+              <div class="c-detail">
+                <span class="c-icon"><i class="fa fa-envelope" aria-hidden="true"></i></span><span
+                  class="c-info">catarina.amaro@goaler.ai</span>
+              </div>
+            </div>
+            <div class="address-block">
+              <h3 class="add-title">Branch</h3>
+              <div class="c-detail">
+                <span class="c-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span><span
+                  class="c-info">&nbsp;Avenida Rovisco Pais nº2, 1049-001</span>
+              </div>
+              <div class="c-detail">
+                <span class="c-icon"><i class="fa fa-phone" aria-hidden="true"></i></span><span class="c-info">+351 913 908
+                  897</span>
+              </div>
+              <div class="c-detail">
+                <span class="c-icon"><i class="fa fa-envelope" aria-hidden="true"></i></span><span
+                  class="c-info">barbara-silva@goaler.ai</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6">
+          <div class="form-wrap">
+            <form action="javascript:void(0)" method="post">
+              <div class="fname floating-label">
+                <input type="text" class="floating-input" name="full name" />
+                <label for="title">First Name</label>
+              </div>
+              <div class="fname floating-label">
+                <input type="text" class="floating-input" name="full name" />
+                <label for="title">Last Name</label>
+              </div>
+              <div class="email floating-label">
+                <input type="email" class="floating-input" name="email" />
+                <label for="email">Email</label>
+              </div>
+              <div class="contact floating-label">
+                <input type="tel" class="floating-input" name="contact" />
+                <label for="email">Mobile</label>
+              </div>
+              <div class="company floating-label">
+                <textarea type="text" class="floating-input" name="company" /></textarea>
+                <label for="email">Message</label>
+              </div>
+              <div class="submit-btn">
+                <button type="submit">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer text-center">
+    <div class="container">
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white mr-3" href="javascript:void(0)">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white mr-3" href="javascript:void(0)">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white" href="javascript:void(0)">
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+      <p class="text-muted small mb-0">Copyright © Goaler.AI 2020</p>
+      <p class="text-muted small mb-0">Designed by <a href="https://www.position2.com/" target="_balnk">Position2</p>
+    </div>
+  </footer>
+</body>
 {% endblock %}

@@ -2,21 +2,11 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-<script>
-    function myFunction() {
-        let role_value = document.getElementById("role").value;
-        if (role_value == 0) {
-            document.getElementById("coach_code").style.display = "none"
-        } else {
-            document.getElementById("coach_code").style.display = "initial"
-        }
-    }
-</script>
 
 <h1>Register</h1>
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6" style="font-size: medium;">
         {{ wtf.quick_form(form) }}
     </div>
 </div>

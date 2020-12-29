@@ -22,10 +22,6 @@ def index():
     else:
         return render_template("landing_page.html")
 
-@app.route("/test")
-def test():
-    return render_template("index2.html")
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:

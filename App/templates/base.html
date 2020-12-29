@@ -4,14 +4,19 @@
 Goaler.AI
 {% endblock %}
 
-
-{% block navbar %}
-
+{% block styles %}
+{{super()}}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/base.css') }}">
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900" rel="stylesheet">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="{{ url_for('static',filename='styles/styles.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ url_for('static',filename='styles/custom-responsive-styles.css') }}" rel="stylesheet" type="text/css">
+
+{% endblock %}
+
+
+{% block navbar %}
+
 
 <nav class="navbar navbar-expand-md navbar-light">
     <div class="container">
@@ -26,7 +31,7 @@ Goaler.AI
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             {% if current_user.is_anonymous %}
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"> <a class="nav-link" href="{{ url_for('test') }}">Home</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url_for('index') }}">Home</a> </li>
                 <li class="nav-item"> <a class="nav-link" href="#About">About</a> </li>
                 <li class="nav-item"> <a class="nav-link" href="#Services">Services</a> </li>
                 <li class="nav-item"> <a class="nav-link" href="#Testimonials">Testimonials</a> </li>
@@ -46,7 +51,7 @@ Goaler.AI
                 <li class="dropdown nav-item">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button"
                         aria-expanded="false">Profile</a>
-                    <ul id = "dropdown1" class="dropdown-menu" role="menu">
+                    <ul id = "dropdown_profile" class="dropdown-menu dropdown-menu-right" role="menu">
                         <li><a href="{{ url_for('athletes') }}">Your Athletes</a></li>
                         <li><a href="#">Your Preferences</a></li>
                         <li class="divider"></li>
