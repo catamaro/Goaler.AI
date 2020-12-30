@@ -15,7 +15,8 @@ Goaler.AI
 <link rel="icon" type="image/png" href="static/images/favicon-16x16.png" sizes="16x16" />
 <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/base.css') }}">
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900" rel="stylesheet">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
 <link href="{{ url_for('static',filename='styles/styles.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ url_for('static',filename='styles/custom-responsive-styles.css') }}" rel="stylesheet" type="text/css">
 
@@ -26,7 +27,8 @@ Goaler.AI
 <nav class="navbar navbar-expand-md navbar-light">
     <div class="container">
         <!-- Brand -->
-        <a class="navbar-brand mr-auto" href="{{ url_for('home') }}"><img src="static/images/logo.png" alt="Goaler.AI" /></a>
+        <a class="navbar-brand mr-auto" href="{{ url_for('home') }}"><img src="static/images/logo.png"
+                alt="Goaler.AI" /></a>
 
         <!-- Toggler/collapsibe Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> <span
@@ -51,6 +53,7 @@ Goaler.AI
 
 {% endblock %}
 
+
 {% block content %}
 <div class="container">
 
@@ -64,6 +67,30 @@ Goaler.AI
 
     {# application content needs to be provided in the app_content block #}
     {% block app_content %}{% endblock %}
+
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white mr-3" href="javascript:void(0)">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white mr-3" href="javascript:void(0)">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white" href="javascript:void(0)">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+            <p class="text-muted small mb-0">Copyright © Goaler.AI 2020</p>
+            <p class="text-muted small mb-0">Designed by <a href="https://www.position2.com/" target="_balnk">Position2</p>
+        </div>
+    </footer>
 
 </div>
 {% endblock %}

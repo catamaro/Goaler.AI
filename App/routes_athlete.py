@@ -5,7 +5,7 @@ from flask_login import current_user, login_user, login_required, logout_user
 
 from App import db
 from App.models import Coach, Athlete, User
-from App.forms import LoginForm, RegistrationForm, ROLE_CHOICES, InformationForm
+from App.forms import InformationForm
 
 
 @app.route("/athlete")
@@ -28,4 +28,4 @@ def info():
         flash('Congratulations, information completed!')
         return redirect(url_for('athlete'))
 
-    return render_template('register.html', title='Register', form=form)
+    return render_template('form.html', title='Information', form=form)

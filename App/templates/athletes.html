@@ -17,21 +17,11 @@
                 <tbody>
                     {% for athlete in athletes %}
                     <tr>
-                        <td>
-                            {{ athlete.first_name }} {{ athlete.last_name }}
-                        </td>
-                        <td>
-                            {{ athlete.email }}
-                        </td>
-                        <td>
-                            {{ athlete.height }}
-                        </td>
-                        <td>
-                            {{ athlete.weight }}
-                        </td>
-                        <td>
-                            {{ athlete.birthday.day }} - {{ athlete.birthday.month }} - {{ athlete.birthday.year }}
-                        </td>
+                        <td> {{ athlete.first_name }} {{ athlete.last_name }}</td>
+                        <td> {{ athlete.email }}</td>
+                        <td>{{ athlete.height }}</td>
+                        <td>{{ athlete.weight }}</td>
+                        <td>{{ athlete.birthday.day }} - {{ athlete.birthday.month }} - {{ athlete.birthday.year }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

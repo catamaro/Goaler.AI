@@ -63,3 +63,15 @@ class Athlete(User):
 
     def __repr__(self):
         return("{}({!r} {!r} {!r})".format(self.__class__.__name__, self.username, self.email, self.height, self.weight, self.birthday ))
+
+
+class Training(db.Model):
+    __tablename__='training'
+
+    id = db.Column(db.Integer, primary_key=True, unique=True)
+    date = db.Column(db.DateTime)
+    duration = db.Column(db.Float)
+    training_type = db.Column(db.Integer)
+        
+    def __repr__(self):
+            return("{}({!r} {!r} {!r})".format(self.__class__.__name__, self.date, self.duration, self.training_type ))

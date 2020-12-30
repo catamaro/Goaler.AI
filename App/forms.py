@@ -1,5 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, SelectField, IntegerField, DateField, FloatField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms import SelectField, IntegerField, DateField, FloatField, TimeField
 from wtforms.validators import DataRequired, Email, EqualTo, ValidationError, Length
 from App.models import User
 from App import app
@@ -46,4 +47,14 @@ class InformationForm(FlaskForm):
     height = FloatField('Height')
     weight = FloatField('Weight')
     submit = SubmitField('Save')
+
+TRAINING_CHOICES = [('0', 'Cardio'), ('1', 'Strength')]
+
+class TrainingForm(FlaskForm):
+    date = DateField('Day (dd-MM)', format='%d-%m-%Y')
+    hour = TimeField('Hour (hh:mm)', format='%H:%M')
+    duration = FloatField('Duration')
+    training_type = SelectField(u'Type', choices=TRAINING_CHOICES)
+    submit = SubmitField('Save')
+        
 

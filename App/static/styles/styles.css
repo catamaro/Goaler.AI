@@ -5150,7 +5150,7 @@ button.close {
   align-items: center;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 1rem;
+  padding: 100;
   border-top: 1px solid #e9ecef
 }
 
@@ -10035,6 +10035,7 @@ footer.footer {
   padding-top: 70px;
   padding-bottom: 70px;
   background-color: #fafafa;
+  width: 100%;
 }
 
 footer.footer .social-link {
