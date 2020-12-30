@@ -75,3 +75,10 @@ class Training(db.Model):
         
     def __repr__(self):
             return("{}({!r} {!r} {!r})".format(self.__class__.__name__, self.date, self.duration, self.training_type ))
+
+""" class Swimming(Training):
+    id = db.Column(db.Integer, db.ForeignKey('training.id'), primary_key=True)
+    __mapper_args__ = {'polymorphic_identity': 'swimming',
+                        'inherit_condition': (id == User.id)}
+
+ """

@@ -28,4 +28,4 @@ def info():
         flash('Congratulations, information completed!')
         return redirect(url_for('athlete'))
 
-    return render_template('form.html', title='Information', form=form)
+    return render_template('form_athlete.html', title='Information', form=form)

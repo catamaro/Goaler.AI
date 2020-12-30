@@ -13,7 +13,7 @@
             </a>
         </div>
     </div>
-  
+
     <br>
     <div class="month">
         <ul>
@@ -39,13 +39,15 @@
         {% endfor %}
 
         {% for day in days %}
-        <li> {{ day }} 
+        <li> {{ day }}
             {% for training in trainings %}
-                {% if day == training %} 
-                <span class="active" >Training</span>
-                {% endif %}
+            {% if day == training %}
+            <span class="active">Training</span>
+            {% endif %}
             {% endfor %}
+
         </li>
+
         {% endfor %}
     </ul>
 </div>

@@ -1,4 +1,4 @@
-{% extends "base_home.html" %}
+{% extends "base_athlete.html" %}
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
@@ -7,10 +7,9 @@
     <div class="offset-2 col-md-8">
         <h1>{{ title }}</h1>
 
-    <div style="font-size: medium;min-height: 600px;">
+    <div style="font-size: medium;">
         {{ wtf.quick_form(form) }}
     </div>
 </div>
-
 
 {% endblock %}
