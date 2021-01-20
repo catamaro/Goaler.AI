@@ -1,0 +1,69 @@
+{% extends "base_coach.html" %}
+
+{% block app_content %}
+<script src="static/js/index.js"></script>
+
+
+<div class="row justify-content-center container-2">
+    <div class="col-md-10">
+        <h1>Training Plans</h1>
+
+        {% for train in trainings %}
+        <div class="plans">
+
+            <div class="flex-container plans_header">
+                <div class="flex-child">
+                    <h2 style="margin:4px;">Taining {{train.id}} - {{ train.start_date.strftime('%d-%m-%Y') }}</h2>
+                </div>
+                <div class="flex-child plans_hour" style="text-align: right;">
+                    <h2 style="margin:4px;">{{ train.start_date.hour }}:{{ train.start_date.minute }} - {{ train.end_date.hour }}:{{
+                        train.start_date.minute }}
+                        <button class="plans_button_down" style="border:none; background-color: transparent;">
+                            <i class="fa fa-caret-down fa-lg" aria-hidden="true"></i>
+                        </button>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="flex-container plans_content" style="flex-direction: column;">
+
+                <h3>Your Practice</h3>
+                <div class="flex-container">
+
+                    <div class="flex-child plans_training">
+                        {% for option in options %}
+                        <div id="plan_option{{train.id}}{{option.id}}" class="plan_content">
+                            <h4>Warm Up</h4>
+                            {% for key, value in option.warm_up.items() %}
+                                <p>{{key}} - {{value}}</p>
+                            {% endfor %}
+                            <h4>Workout</h4>
+                            {% for key, value in option.workout.items() %}
+                                <p>{{key}} - {{value}}</p>
+                            {% endfor %}
+                            <h4>Cool Down</h4>
+                            {% for key, value in option.cool_down.items() %}
+                                <p>{{key}} - {{value}}</p>
+                            {% endfor %}
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="flex-child plans_training">
+                        {% for option in options %}
+                        <div class="plan_options">
+                            <button id="{{train.id}}{{option.id}}" class="btn btn-xl plans_option_btn" style="width: 100%;font-weight: bold;">Sugestion {{option.id}} - {{
+                                option.train_type }}</button><br>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

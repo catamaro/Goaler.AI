@@ -2,9 +2,129 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-    <div class="container-2">
-        <h1>Hello!</h1>
+
+<div class="row justify-content-center container-2">
+    <div class="col-md-10">
+        <h1>Dashboard</h1>
+     
+        <div class="flex-container">
+
+            <div class="flex-child content_dash">
+
+                <div class="flex-container header_dash">
+                    <div class="flex-child">
+                        <h2 style="margin:4px;">Events</h2>
+                    </div>
+                    <div class="flex-child">
+                        <a class="btn btn-sl d-inline add_btn" href="{{ url_for('new_event') }}">
+                            Add Event <i class="fa fa-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="table-responsive table_dash" style="min-height: 300px;">
+                    <table class="table" style="font-size: medium;">
+                        <thead>
+                            <th scope="col">Name</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Date</th>
+                        </thead>
+                        <tbody>
+                            {% for event in events %}
+                            <tr>
+                                <td>{{ event.name }}</td>
+
+                                {% for key, value in choices %}
+                                    {% if key==event.event_type %}
+                                    <td>{{ value }}</td>
+                                    {% endif %}
+                                {% endfor %}
+                                <td>{{ event.start_date.strftime('%d-%m-%Y') }} - {{ event.end_date.strftime('%d-%m-%Y') }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="flex-child content_dash">
+
+                <div class="flex-container header_dash">
+                    <div class="flex-child">
+                        <h2 style="margin:4px;">Goals</h2>
+                    </div>
+                    <div class="flex-child">
+                        <a class="btn btn-sl d-inline add_btn" href="#">
+                            Add Goal <i class="fa fa-plus"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="table-responsive table_dash" style="min-height: 300px;">
+                    <table class="table" style="font-size: medium;">
+                        <thead>
+                            <th scope="col">Athlete</th>
+                            <th scope="col">Goal</th>
+                            <th scope="col">Deadline</th>
+                        </thead>
+                        <!-- <tbody>
+                            {% for event in events %}
+                            <tr>
+                                <td>{{ event.first_name }}</td>
+                                <td>{{ event.event_type }}</td>
+                                <td>{{ event.start_date.strftime('%d-%m-%Y') }} - {{ event.end_date.strftime('%d-%m-%Y') }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody> -->
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-container">
+            <div class="flex-child content_dash">
+
+                <div class="flex-container header_dash">
+                    <div class="flex-child">
+                        <h2 style="margin:4px;">Injuries</h2>
+                    </div>
+                    <div class="flex-child">
+                        <a class="btn btn-sl d-inline add_btn" href="#">
+                            Add Injurie <i class="fa fa-plus"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="table-responsive table_dash" style="min-height: 300px;">
+                    <table class="table" style="font-size: medium;">
+                        <thead>
+                            <th scope="col">Athlete</th>
+                            <th scope="col">Injurie</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Recovery</th>
+                        </thead>
+                        <!-- <tbody>
+                            {% for event in events %}
+                            <tr>
+                                <td>{{ event.first_name }}</td>
+                                <td>{{ event.event_type }}</td>
+                                <td>{{ event.start_date.strftime('%d-%m-%Y') }} - {{ event.end_date.strftime('%d-%m-%Y') }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody> -->
+                    </table>
+                </div>
+            </div>
+
+            <div class="flex-child content_dash">
+                <a class="btn btn-sl d-inline add_btn" href="#">
+                    Add New Widget <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+        
     </div>
+</div>
     
 
 {% endblock %}

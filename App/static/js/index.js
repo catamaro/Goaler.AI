@@ -1,67 +1,28 @@
-
-function getVideoViews(videoID) {
-    $.ajax({
-        url: '/API/proxy_videos/' + videoID + '/',
-        type: "GET",
-        dataType: "json",
-        success: function (data) {
-            $("#nviews" + videoID).html(data['views'])
-        },
-    })
-}
-function updateVideostable() {
-    const urlParams = new URLSearchParams(window.location.search);
-    ist_id = urlParams.get('id')
-    $.ajax({
-        url: '/API/proxy_videos/',
-        type: "GET",
-        dataType: "json",
-        success: function (data) {
-            $('#videosTable > tbody:last-child').empty()
-            data["videos"].forEach(v => {
-                $('#videosTable > tbody:last-child').
-                    append('<tr> <td>' + v["video_id"] + '</td><td>' + v["description"] + '</td><td id="nviews' + v["video_id"] + '">'+ '</td><td>' + "<a href='/QA/"+ v["video_id"] + "/" + ist_id + "'>" + "Select" + "</a>" + '</td></tr>');
-                getVideoViews(v["video_id"])
-            });
-
-            max = document.getElementById('videosTable').rows.length - 1
-            $("#playVideoID").attr({ "max": max });
-        }
-    });
-
-}
-function addNewVideo(url, description) {
-    let requestData = { "description": description, 'url': url}
-    $.ajax({
-        url: '/API/proxy_videos/',
-        type: "POST",
-        dataType: "json",
-        contentType: 'application/json',
-        data: JSON.stringify(requestData),
-        success: function (data) {
-            updateVideostable()
-        }
-    });
-}
 $(document).ready(function () {
-    const urlParams = new URLSearchParams(window.location.search);
+    $('.plans_content').hide()
+    $('.plan_content').hide()
 
-    updateVideostable()
-
-    $("#buttonUpdateVideotable").click(
-        function () {
-            updateVideostable()
+    $(".plans_button_down").click(function () {
+        var content = $(this).closest(".plans_header").parent().children().eq(1)
+        if(content.is(":visible")){
+            content.fadeOut('fast');
         }
-    )
+        else{
+            content.fadeIn('fast');
+        } 
+    })
 
-    $("#formAddVideo").submit(function (e) {
-        e.preventDefault()
+    $(".plans_option_btn").click(function () {
+        console.log($(this).attr('id'))
+        var id = "plan_option" + $(this).attr('id')
+        plan_content = $("#" + id)
 
-        newVideoURl = $("#newVideoURL").val()
-        newVideoDESC = $("#newVideoDescription").val()
-        newVideoUser = urlParams.get('ist_id')
-
-        addNewVideo(newVideoURl, newVideoDESC)
+        if(plan_content.is(":visible")){
+            plan_content.fadeOut('fast');
+        }
+        else{
+            plan_content.parent().children().hide()
+            plan_content.fadeIn('fast');
+        } 
     })
 });
-

@@ -75,7 +75,7 @@
 .month {
   padding: 25px 25px;
   width: 100%;
-  background: #1abc9c;
+  background: #07BCAB;
   text-align: center;
 }
 
@@ -102,7 +102,7 @@
 .weekdays {
   margin: 0;
   padding: 15px;
-  background-color: #ddd;
+  background-color: #f1f1f1;
 }
 
 .weekdays li {
@@ -115,7 +115,7 @@
 
 .days {
   padding: 10px;
-  background: #eee;
+  background: #FAFAFA;
   margin: 0;
 }
 
@@ -132,19 +132,19 @@
 
 .days li .active {
   padding: 5px;
-  background: #1abc9c;
+  background: #07BCAB;
   color: white !important;
   font-size:12px;
   text-align: center;
 }
 
-#add_training {
+.add_btn {
   border: none;
   padding: 10px 15px;
   text-align: center;
-  font-size: 12px;
+  font-weight: bold;
   color: #ffffff;
-  background-color: #1ABC9C;
+  background-color: #07BCAB;
   float: right;
 }  
 
@@ -156,3 +156,54 @@
   flex: 1;
 }  
 
+/* COACH PLANS CSS */
+.plans_button_down:hover {
+  color: #DDDDDD;
+}
+
+.plans_header{
+  padding: 10px 10px 10px 10px;
+  background-color: #07BCAB;
+  color: rgb(255, 255, 255);
+  margin-bottom: 5px;
+}
+
+.plans_content {
+  padding: 10px 10px 10px 10px;
+  background-color:  #FAFAFA;
+  margin-bottom: 10px;
+}
+
+.plans_training {
+  background-color: #ffffff;
+  margin: 10px;
+}
+
+.plan_content {
+  padding: 10px 10px 10px 10px;
+  background-color: #FAFAFA;
+  margin: 10px;
+}
+
+.plan_options{
+  background-color: #ffffff;
+  margin: 10px;
+}
+
+/* COACH DASH CSS */
+
+.content_dash {
+  margin:10px;
+}
+
+.header_dash {
+  background-color:#07BCAB;
+  color:white;
+  padding: 10px 10px 10px 10px;
+}
+
+.table_dash {
+  background-color:#FAFAFA;
+  margin-top: 5px;
+  padding: 5px 10px 10px 10px;
+} 

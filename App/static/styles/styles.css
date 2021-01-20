@@ -8361,8 +8361,6 @@ a.text-dark:focus, a.text-dark:hover {
   }
 }
 
-/*# sourceMappingURL=bootstrap.min.css.map */
-
 /* fancy box style */
 
 @charset "UTF-8";
@@ -8817,7 +8815,7 @@ body.fancybox-iosfix {
   left: 0;
   right: 0;
   padding: 60px 2vw 0;
-  background: linear-gradient(180deg, transparent 0, rgba(0, 0, 0, .1) 20%, rgba(0, 0, 0, .2) 40%, rgba(0, 0, 0, .6) 80%, rgba(0, 0, 0, .8));
+  background: linear-(180deg, transparent 0, rgba(0, 0, 0, .1) 20%, rgba(0, 0, 0, .2) 40%, rgba(0, 0, 0, .6) 80%, rgba(0, 0, 0, .8));
   pointer-events: none
 }
 

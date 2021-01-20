@@ -62,23 +62,47 @@ class Athlete(User):
     birthday = db.Column(db.DateTime)
 
     def __repr__(self):
-        return("{}({!r} {!r} {!r})".format(self.__class__.__name__, self.username, self.email, self.height, self.weight, self.birthday ))
+        return("{}({!r} {!r} {!r} {!r} {!r})".format(self.__class__.__name__, self.username, self.email, self.height, self.weight, self.birthday ))
 
 
 class Training(db.Model):
     __tablename__='training'
 
     id = db.Column(db.Integer, primary_key=True, unique=True)
-    date = db.Column(db.DateTime)
-    duration = db.Column(db.Float)
+    start_date = db.Column(db.DateTime)
+    end_date = db.Column(db.DateTime)
     training_type = db.Column(db.Integer)
         
     def __repr__(self):
-            return("{}({!r} {!r} {!r})".format(self.__class__.__name__, self.date, self.duration, self.training_type ))
+            return("{}({!r} {!r} {!r})".format(self.__class__.__name__, self.start_date, self.end_date, self.training_type ))
 
-""" class Swimming(Training):
-    id = db.Column(db.Integer, db.ForeignKey('training.id'), primary_key=True)
-    __mapper_args__ = {'polymorphic_identity': 'swimming',
-                        'inherit_condition': (id == User.id)}
+class Swimming(db.Model):
+    __tablename__='swimming'
 
- """
+    id = db.Column(db.Integer, primary_key=True)
+    warm_up = db.Column(db.PickleType)
+    workout = db.Column(db.PickleType)
+    cool_down = db.Column(db.PickleType)
+    train_type = db.Column(db.String)
+
+    def __repr__(self):
+            return("{}({!r} {!r} {!r})".format(self.__class__.__name__, self.warm_up, self.workout, self.cool_down ))
+
+class Event(db.Model):
+    __tablename__='events'
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String)
+    event_type = db.Column(db.String)
+    start_date = db.Column(db.DateTime)
+    end_date = db.Column(db.DateTime)
+
+    def __repr__(self):
+            return("{}({!r} {!r} {!r} {!r})".format(self.__class__.__name__, self.name, self.event_type, self.start_date, self.end_date ))
+
+
+""" class Goals(db.Model):
+    __tablename__='goals'
+    id = db.Column(db.Integer, primary_key=True)
+
+    athlete_id = db.Column(db.Integer, db.ForeignKey('goals.id'), primary_key=True) """

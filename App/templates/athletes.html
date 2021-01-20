@@ -3,7 +3,7 @@
 {% block app_content %}
 
 <div class="row justify-content-center container-2">
-    <div class="col-lg-auto">
+    <div class="col-md-10">
         <h1>Athletes</h1>
         <div class="table-responsive" style="min-height: 600px;">
             <table class="table" style="font-size: medium;">
@@ -17,8 +17,8 @@
                 <tbody>
                     {% for athlete in athletes %}
                     <tr>
-                        <td> {{ athlete.first_name }} {{ athlete.last_name }}</td>
-                        <td> {{ athlete.email }}</td>
+                        <td>{{ athlete.first_name }} {{ athlete.last_name }}</td>
+                        <td>{{ athlete.email }}</td>
                         <td>{{ athlete.height }}</td>
                         <td>{{ athlete.weight }}</td>
                         <td>{{ athlete.birthday.day }} - {{ athlete.birthday.month }} - {{ athlete.birthday.year }}</td>
@@ -27,8 +27,7 @@
                 </tbody>
             </table>
         </div>
-
-    </div>>
+    </div>
 </div>
 
 {% endblock %}

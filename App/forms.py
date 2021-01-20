@@ -51,10 +51,17 @@ class InformationForm(FlaskForm):
 TRAINING_CHOICES = [('0', 'Cardio'), ('1', 'Strength')]
 
 class TrainingForm(FlaskForm):
-    date = DateField('Day (dd-MM)', format='%d-%m-%Y')
-    hour = TimeField('Hour (hh:mm)', format='%H:%M')
-    duration = FloatField('Duration')
+    date = DateField('Day (dd-MM-YYYY)', format='%d-%m-%Y')
+    start_hour = TimeField('Start Hour (hh:mm)', format='%H:%M')
+    end_hour = TimeField('End Hour (hh:mm)', format='%H:%M')
     training_type = SelectField(u'Type', choices=TRAINING_CHOICES)
     submit = SubmitField('Save')
-        
 
+EVENT_CHOICES = [('0', 'Regional'), ('1', 'Nacional'), ('2', 'European'), ('3', 'World Championship'), ('4', 'Olympics')]
+
+class EventForm(FlaskForm):
+    name = StringField('Event Name')    
+    event_type = SelectField(u'Type', choices=EVENT_CHOICES)
+    start_date = DateField('Start Day (dd-MM-YYYY)', format='%d-%m-%Y')
+    end_date = DateField('End Day (dd-MM-YYYY)', format='%d-%m-%Y')
+    submit = SubmitField('Save')

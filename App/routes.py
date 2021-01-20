@@ -9,12 +9,15 @@ from App.forms import LoginForm, RegistrationForm
 
 
 @app.route("/home")
+@app.route("/")
 def home():
     return render_template("landing_page.html")
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
 
     form = LoginForm()
     if form.validate_on_submit():
