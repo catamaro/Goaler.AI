@@ -4,7 +4,7 @@ from App import app, models
 from flask_login import current_user, login_user, login_required, logout_user
 
 from App import db
-from App.models import Coach, Athlete, User, Training, Swimming, Event 
+from App.models import Coach, Athlete, User, Training, Swimming, Event, Goal
 from App.forms import TrainingForm, EventForm, EVENT_CHOICES
 
 from datetime import datetime
@@ -14,12 +14,14 @@ from calendar import monthrange
 @app.route("/coach")
 def coach():
     events = Event.query.all()
-    return render_template("dashboard.html", events=events, choices=EVENT_CHOICES)
+    goals = Goal.query.all()
+    athletes = Athlete.query.all()
+
+    return render_template("dashboard.html", events=events, choices=EVENT_CHOICES, goals=goals, athletes=athletes)
 
 
 @app.route('/athletes')
 def athletes():
-
     athletes = Athlete.query.join(Coach,
                                   Coach.coach_id == Athlete.coach_id).filter(Athlete.coach_id == current_user.coach_id)
 

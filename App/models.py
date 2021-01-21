@@ -101,8 +101,17 @@ class Event(db.Model):
             return("{}({!r} {!r} {!r} {!r})".format(self.__class__.__name__, self.name, self.event_type, self.start_date, self.end_date ))
 
 
-""" class Goals(db.Model):
-    __tablename__='goals'
+class Goal(db.Model):
+    __tablename__='goal'
+    
     id = db.Column(db.Integer, primary_key=True)
+    athlete_id = db.Column(db.Integer)
+    style = db.Column(db.String)
+    distance = db.Column(db.Integer)
+    deadline = db.Column(db.DateTime)
+    achieved = db.Column(db.Boolean, default=False)
+    time = db.Column(db.Float)
+    progress = db.Column(db.Float, default=0)
 
-    athlete_id = db.Column(db.Integer, db.ForeignKey('goals.id'), primary_key=True) """
+    def __repr__(self):
+            return("{}({!r} {!r} {!r} {!r} {!r} {!r} {!r})".format(self.__class__.__name__, self.athlete_id, self.style, self.distance, self.time, self.deadline, self.achieved, self.progress))

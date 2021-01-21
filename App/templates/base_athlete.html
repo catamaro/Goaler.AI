@@ -21,6 +21,8 @@ Goaler.AI
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-xmlrpc/0.4.3/jquery.xmlrpc.js"> </script>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="static/js/index.js"></script>
+
 
 {% endblock %}
 
@@ -39,7 +41,7 @@ Goaler.AI
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item"><a class="nav-link" href="{{ url_for('athlete') }}">Goals tracker</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Calender</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('athlete_calendar') }}">Calender</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Performance</a></li>
             </ul>
             <ul class="navbar-nav">

@@ -207,3 +207,28 @@
   margin-top: 5px;
   padding: 5px 10px 10px 10px;
 } 
+
+/* ATHLETE GOALS CSS */
+
+.goal_content{
+  padding: 10px 10px 10px 10px;
+  background-color: #FAFAFA;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.progressbar {
+  background-color: #07BCAB;
+  border-radius: 13px;
+  padding: 3px;
+}
+
+.progressbar>div {
+  background-color: white;
+  height: 18px;
+  width: 40%;
+  border-radius: 10px;
+  text-align:center;
+  font-size: small;
+  font-weight: bold;
+}

@@ -51,12 +51,7 @@
 
                 <div class="flex-container header_dash">
                     <div class="flex-child">
-                        <h2 style="margin:4px;">Goals</h2>
-                    </div>
-                    <div class="flex-child">
-                        <a class="btn btn-sl d-inline add_btn" href="#">
-                            Add Goal <i class="fa fa-plus"></i>
-                        </a>
+                        <h2 style="margin:4px;">Athletes Goals</h2>
                     </div>
                 </div>
                 
@@ -66,16 +61,36 @@
                             <th scope="col">Athlete</th>
                             <th scope="col">Goal</th>
                             <th scope="col">Deadline</th>
+                            <th scope="col">Status</th>
                         </thead>
-                        <!-- <tbody>
-                            {% for event in events %}
+                        <tbody>
+                            {% for goal in goals %}
                             <tr>
-                                <td>{{ event.first_name }}</td>
-                                <td>{{ event.event_type }}</td>
-                                <td>{{ event.start_date.strftime('%d-%m-%Y') }} - {{ event.end_date.strftime('%d-%m-%Y') }}</td>
+                                <td>
+                                    {% for athlete in athletes %}
+                                    {% if athlete.id==goal.athlete_id %}
+                                        {{ athlete.first_name }} {{ athlete.last_name }}
+                                    {% endif %}
+                                    {% endfor %}
+                                </td>
+                                <td>{{ goal.time }} seconds {{ goal.distance }}m
+                                    {% for key, value in choices %}
+                                    {% if key==goal.style %}
+                                        {{ value }}
+                                    {% endif %}
+                                    {% endfor %}
+                                </td>
+                                <td>{{ goal.deadline.day }} - {{ goal.deadline.month }} - {{ goal.deadline.year }}</td>
+                                <td>
+                                    {% if goal.achieved == true %}
+                                        <i class="fa fa-check-circle" style="color: #6166E1;"></i> Achieved
+                                    {% else %}
+                                        <i class="fa fa-times-circle" style="color: #6166E1;"></i> In Progress
+                                    {% endif %}
+                                </td>
                             </tr>
                             {% endfor %}
-                        </tbody> -->
+                        </tbody>
                     </table>
                 </div>
             </div>

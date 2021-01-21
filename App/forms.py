@@ -43,7 +43,7 @@ class RegistrationForm(FlaskForm):
 class InformationForm(FlaskForm):
     first_name = StringField('First Name')
     last_name = StringField('Last Name')
-    birthday = DateField('Birthday Date (yyyy-MM-DD)')
+    birthday = DateField('Birthday Date (mm-dd-yyyy)')
     height = FloatField('Height')
     weight = FloatField('Weight')
     submit = SubmitField('Save')
@@ -51,7 +51,7 @@ class InformationForm(FlaskForm):
 TRAINING_CHOICES = [('0', 'Cardio'), ('1', 'Strength')]
 
 class TrainingForm(FlaskForm):
-    date = DateField('Day (dd-MM-YYYY)', format='%d-%m-%Y')
+    date = DateField('Day (mm-dd-yyyy)')
     start_hour = TimeField('Start Hour (hh:mm)', format='%H:%M')
     end_hour = TimeField('End Hour (hh:mm)', format='%H:%M')
     training_type = SelectField(u'Type', choices=TRAINING_CHOICES)
@@ -61,7 +61,20 @@ EVENT_CHOICES = [('0', 'Regional'), ('1', 'Nacional'), ('2', 'European'), ('3', 
 
 class EventForm(FlaskForm):
     name = StringField('Event Name')    
-    event_type = SelectField(u'Type', choices=EVENT_CHOICES)
-    start_date = DateField('Start Day (dd-MM-YYYY)', format='%d-%m-%Y')
-    end_date = DateField('End Day (dd-MM-YYYY)', format='%d-%m-%Y')
+    event_type = SelectField(u'Event Type', choices=EVENT_CHOICES)
+    start_date = DateField('Start Day (mm-dd-yyyy)')
+    end_date = DateField('End Day (mm-dd-yyyy)')
+    submit = SubmitField('Save')
+
+STYLE_CHOICES = [('0', 'Freestyle'), ('1', 'Backstroke'), ('2', 'Breaststroke'), ('3', 'Butterfly'), ('4', 'Sidestroke')]
+
+class GoalForm(FlaskForm):
+    time = FloatField('Time Goal')    
+    distance = IntegerField('Distance')    
+    style = SelectField(u'Style', choices=STYLE_CHOICES)
+    deadline = DateField('Deadline (mm-dd-yyyy)')
+    submit = SubmitField('Save')
+
+class ProgressForm(FlaskForm):
+    progress = FloatField('New Record')
     submit = SubmitField('Save')

@@ -5,7 +5,97 @@
 
 <div class="row justify-content-center container-2">
     <div class="col-md-10">
-        <h1>Hello!</h1>
+        <div class="flex-container">
+            <div class="flex-child">
+                <h1 class="d-inline">Goal Tracker</h1>
+            </div>
+            <div class="flex-child">
+                <a class="btn btn-sl d-inline add_btn" href="{{ url_for('new_goal') }}">
+                    Add Goal <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="flex-container">
+            <div class="flex-child content_dash form-group">
+
+                <div class="flex-container header_dash">
+                    <div class="flex-child">
+                        <h2 style="margin:4px;">Goals to Achieve</h2>
+                    </div>
+                    <div class="flex-child">
+                        <h2 style="margin:4px;text-align:right;">Deadline</h2>
+                    </div>
+                </div>
+
+                {% for goal in goals %}
+                {% if goal.achieved == false %}
+                <div class="flex-container">
+                    <div id="goal{{goal.id}}" class="goal_content flex-child">
+                        <p style="text-align:center;font-weight: 600;">{{ goal.time }} seconds {{ goal.distance }}m
+                            {% for key, value in choices %}
+                            {% if key==goal.style %}
+                            {{ value }}
+                            {% endif %}
+                            {% endfor %}
+                        </p>
+
+                        <div class="progressbar">
+                            <div id="prog{{goal.id}}" style="margin: 2px;" >
+                                {% if goal.progress != 0 %}
+                                {{ ((goal.time / goal.progress) * 100)|int }}%
+                                {% else %}
+                                0%
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" goal_content flex-child">
+                        <p style="text-align:right;font-weight: 600;">{{ goal.deadline.day }} - {{ goal.deadline.month }} -
+                            {{ goal.deadline.year }}
+                        </p>
+
+                        <a id="edit{{goal.id}}" class="btn btn-sl add_btn" href="{{ url_for('update_goal', id=goal.id) }}" style="text-align:right;">
+                            Update
+                        </a>
+                    </div>
+                </div>
+
+                {% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="flex-child content_dash">
+                <div class="flex-container header_dash">
+                    <div class="flex-child">
+                        <h2 style="margin:4px;">Reached Goals</h2>
+                    </div>
+                </div>
+
+                {% for goal in goals %}
+                {% if goal.achieved == true %}
+                <div class="flex-container">
+
+                    <div class="goal_content flex-child">
+                        <p style="text-align:left;font-weight: 600;"><i class="fa fa-check-circle" style="color: #6166E1;"></i> {{ goal.time }} seconds {{ goal.distance }}m
+                            {% for key, value in choices %}
+                            {% if key==goal.style %}
+                            {{ value }}
+                            {% endif %}
+                            {% endfor %}
+                        </p>
+                    </div>
+                    <div class=" goal_content flex-child">
+                        <p style="text-align:right;font-weight: 600;">{{ goal.deadline.day }} - {{ goal.deadline.month }} -
+                            {{ goal.deadline.year }}
+                        </p>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+
+        </div>
     </div>
 </div>
 
